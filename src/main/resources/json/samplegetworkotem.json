@@ -1,0 +1,115 @@
+{
+	"count": 1,
+	"value": [
+		{
+			"id": 2,
+			"rev": 4,
+			"fields": {
+				"System.AreaPath": "spring-blog-app",
+				"System.TeamProject": "spring-blog-app",
+				"System.IterationPath": "spring-blog-app\\Iteration 1",
+				"System.WorkItemType": "Bug",
+				"System.State": "Closed",
+				"System.Reason": "Fixed and verified",
+				"System.AssignedTo": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"System.CreatedDate": "2023-07-11T16:25:11.59Z",
+				"System.CreatedBy": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"System.ChangedDate": "2023-07-29T07:03:48.683Z",
+				"System.ChangedBy": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"System.CommentCount": 2,
+				"System.Title": "testDeleteUserById Failed in 20230711.2",
+				"Microsoft.VSTS.Common.StateChangeDate": "2023-07-11T16:40:47.923Z",
+				"Microsoft.VSTS.Common.ActivatedDate": "2023-07-11T16:40:47.923Z",
+				"Microsoft.VSTS.Common.ActivatedBy": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"Microsoft.VSTS.Common.ResolvedDate": "2023-07-11T16:40:47.923Z",
+				"Microsoft.VSTS.Common.ResolvedBy": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"Microsoft.VSTS.Common.ResolvedReason": "Fixed and verified",
+				"Microsoft.VSTS.Common.ClosedDate": "2023-07-11T16:40:47.923Z",
+				"Microsoft.VSTS.Common.ClosedBy": {
+					"displayName": "Shivam Shah",
+					"url": "https://spsprodsin2.vssps.visualstudio.com/A5b55cd38-4059-4790-b832-1be85a9080ae/_apis/Identities/df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"_links": {
+						"avatar": {
+							"href": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+						}
+					},
+					"id": "df4e5bdf-4f1b-6a30-be8e-c959ba4ca686",
+					"uniqueName": "shah.shivam.410@gmail.com",
+					"imageUrl": "https://dev.azure.com/shahshivam410/_apis/GraphProfile/MemberAvatars/msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2",
+					"descriptor": "msa.ZGY0ZTViZGYtNGYxYi03YTMwLWJlOGUtYzk1OWJhNGNhNjg2"
+				},
+				"Microsoft.VSTS.Common.Priority": 2,
+				"Microsoft.VSTS.Common.Severity": "3 - Medium",
+				"Microsoft.VSTS.Common.ValueArea": "Business",
+				"System.History": "<div>Test comment</div>",
+				"Microsoft.VSTS.TCM.ReproSteps": "<span style=\"color:6d6d6d;\">Test</span>: <b>testDeleteUserById</b><br><span style=\"color:6d6d6d;\">Priority</span>: 0<br><span style=\"color:6d6d6d;\">Test file</span>: unittests.userapi.UserServiceTest<br><span style=\"color:6d6d6d;\">Machine</span>: <span style=\"color:6d6d6d;\">not available</span><br><span style=\"color:6d6d6d;\">Tested build</span>: <a href=\"/shahshivam410/spring-blog-app/_Build?_a=summary&amp;buildId=3\" target=_blank rel=\"nofollow noopener noreferrer\">20230711.2</a><br><span style=\"color:6d6d6d;\">Error message</span>: <b>expected: &lt;true&gt; but was: &lt;false&gt;</b><br><span style=\"color:6d6d6d;\">Stack trace</span>: <br><span>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;\n\tat unittests.userapi.UserServiceTest.testDeleteUserById(UserServiceTest.java:92)\n</span><br><br>"
+			},
+			"commentVersionRef": {
+				"commentId": 4058720,
+				"version": 1,
+				"url": "https://dev.azure.com/shahshivam410/1c0c8939-b2a7-44dc-afda-64d17f5637a3/_apis/wit/workItems/2/comments/4058720/versions/1"
+			},
+			"url": "https://dev.azure.com/shahshivam410/1c0c8939-b2a7-44dc-afda-64d17f5637a3/_apis/wit/workItems/2"
+		}
+	]
+}
