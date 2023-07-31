@@ -1,5 +1,9 @@
 package ado.testManagement;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import ado.modal.WorkItem;
@@ -26,6 +30,18 @@ public class JsonResponseHandler {
 		item.setType(workItemType);
 		return item;
 		
+	}
+	
+	public List<Integer> parseActiveWorkItemsAsignedTo(String s) {
+		List<Integer> result = new ArrayList<>();
+		JSONObject json = new JSONObject(s);
+		JSONArray jsonArray = json.getJSONArray("workItems");
+		JSONObject temp;
+		for(int i=0; i<jsonArray.length(); i++) {
+			temp = jsonArray.getJSONObject(i);
+			result.add(temp.getInt("id"));
+		}
+		return result;
 	}
 	
 }

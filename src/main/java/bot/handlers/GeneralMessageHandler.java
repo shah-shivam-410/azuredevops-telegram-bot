@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ForceReplyKeyboard;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import bot.utils.UtilityResponses;
 
@@ -22,6 +20,9 @@ public class GeneralMessageHandler implements EventHandler {
 		
 		if(update.getMessage().getText().equals("Get workitem detais")) {
 			message = responses.sendReplyMarkupMessage(update.getMessage().getChatId(), "Please enter workitem id", "Please enter workitem id");
+		}
+		if(update.getMessage().getText().equals("Active work items asssigned to person")) {
+			message = responses.sendReplyMarkupMessage(update.getMessage().getChatId(), "Please enter email id", "Please enter email id");
 		}
 		return message;
 	}

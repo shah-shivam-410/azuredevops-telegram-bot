@@ -1,6 +1,7 @@
 package bot.handlers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -23,10 +24,22 @@ public class ReplyToMessageHandler implements EventHandler {
 
 			String text = update.getMessage().getReplyToMessage().getText();
 			if (text.equals("Please enter workitem id")) {
-				WorkItemsDetails details = new WorkItemsDetails();
+				WorkItemsDetails details;
 				try {
+					details = new WorkItemsDetails();
 					WorkItem workItemDetails = details.getWorkItemDetails(update.getMessage().getText());
 					message = responses.sendText(update.getMessage().getFrom().getId(), workItemDetails.toString());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+			if (text.equals("Please enter email id")) {
+				WorkItemsDetails details;
+				try {
+					details = new WorkItemsDetails();
+					String itemsAsignedTo = details.getActiveWorkItemsAsignedTo(update.getMessage().getText());
+					message = responses.sendText(update.getMessage().getFrom().getId(), itemsAsignedTo);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -24,7 +24,7 @@ public class CommandHandlers implements EventHandler {
 		SendMessage message = null;
 		if (update.getMessage().getText().equals("/start")) {
 			KeyboardButton keyButton1 = KeyboardButton.builder().text("Get workitem detais").build();
-			KeyboardButton keyButton2 = KeyboardButton.builder().text("Second choice").build();
+			KeyboardButton keyButton2 = KeyboardButton.builder().text("Active work items asssigned to person").build();
 			KeyboardButton keyButton3 = KeyboardButton.builder().text("Third choice").build();
 			KeyboardButton keyButton4 = KeyboardButton.builder().text("Fourth choice").build();
 			KeyboardRow row1 = new KeyboardRow();

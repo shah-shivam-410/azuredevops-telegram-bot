@@ -6,7 +6,7 @@
 			"rev": 4,
 			"fields": {
 				"System.AreaPath": "spring-blog-app",
-				"System.TeamProject": "spring-blog-app",
+				"c": "spring-blog-app",
 				"System.IterationPath": "spring-blog-app\\Iteration 1",
 				"System.WorkItemType": "Bug",
 				"System.State": "Closed",

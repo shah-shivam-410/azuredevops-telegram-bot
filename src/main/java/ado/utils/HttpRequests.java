@@ -11,6 +11,8 @@ import org.apache.http.HttpHeaders;
 import org.apache.http.ParseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -42,6 +44,31 @@ public class HttpRequests {
 					throw new Exception("Error response in GET request: " + response.getStatusLine().getStatusCode());
 				}
 				// System.out.println(resultContent);
+			}
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		return resultContent;
+	}
+	
+	public String post(URI uri, String payload) throws Exception {
+		String resultContent = null;
+		HttpPost httpPost = new HttpPost(uri);
+		httpPost.setHeader(HttpHeaders.AUTHORIZATION, getAuthHeader());
+		httpPost.setHeader("Accept", "application/json");
+	    httpPost.setHeader("Content-type", "application/json");
+	    httpPost.setEntity(new StringEntity(payload));
+		
+		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+			try (CloseableHttpResponse response = httpclient.execute(httpPost)) {
+				if (response.getStatusLine().getStatusCode() == 200) {
+					HttpEntity entity = response.getEntity();
+					resultContent = EntityUtils.toString(entity);
+				}
+				else {
+					throw new Exception("Error response in GET request: " + response.getStatusLine().getStatusCode());
+				}
+				//System.out.println(resultContent);
 			}
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
