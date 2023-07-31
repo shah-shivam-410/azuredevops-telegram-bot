@@ -1,8 +1,5 @@
 package ado.testManagement;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.JSONObject;
 
 import ado.modal.WorkItem;

@@ -1,4 +1,4 @@
-package botutils;
+package bot;
 
 import java.io.IOException;
 

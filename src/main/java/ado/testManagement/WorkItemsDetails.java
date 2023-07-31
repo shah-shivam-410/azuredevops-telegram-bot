@@ -1,7 +1,6 @@
 package ado.testManagement;
 
 import java.net.URI;
-import java.util.Map;
 
 import org.apache.http.client.utils.URIBuilder;
 
