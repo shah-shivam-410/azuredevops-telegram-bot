@@ -1,0 +1,41 @@
+{
+    "_links": {
+        "self": {
+            "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6/runs/22"
+        },
+        "web": {
+            "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_build/results?buildId=22"
+        },
+        "pipeline.web": {
+            "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_build/definition?definitionId=6"
+        },
+        "pipeline": {
+            "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6?revision=2"
+        }
+    },
+    "templateParameters": {},
+    "pipeline": {
+        "url": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6?revision=2",
+        "id": 6,
+        "revision": 2,
+        "name": "SecondPipeline",
+        "folder": "\\"
+    },
+    "state": "inProgress",
+    "createdDate": "2023-08-01T16:07:34.6432087Z",
+    "url": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6/runs/22",
+    "resources": {
+        "repositories": {
+            "self": {
+                "repository": {
+                    "id": "af4f0897-28ba-4ca6-945a-172d5b37fc74",
+                    "type": "azureReposGit"
+                },
+                "refName": "refs/heads/main",
+                "version": "e8e4c43f8cd1e4e8c4f9e645b0317f6532b885cb"
+            }
+        }
+    },
+    "id": 22,
+    "name": "20230801.3"
+}

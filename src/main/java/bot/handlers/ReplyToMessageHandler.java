@@ -1,12 +1,12 @@
 package bot.handlers;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import ado.modal.WorkItem;
+import ado.testManagement.PipelineDetails;
 import ado.testManagement.WorkItemsDetails;
 import bot.utils.UtilityResponses;
 
@@ -40,6 +40,17 @@ public class ReplyToMessageHandler implements EventHandler {
 					details = new WorkItemsDetails();
 					String itemsAsignedTo = details.getActiveWorkItemsAsignedTo(update.getMessage().getText());
 					message = responses.sendText(update.getMessage().getFrom().getId(), itemsAsignedTo);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (text.equals("Please enter pipeline id")) {
+				PipelineDetails details;
+				try {
+					details = new PipelineDetails();
+					String rundetails = details.runPipeline(update.getMessage().getText());
+					message = responses.sendText(update.getMessage().getFrom().getId(), rundetails);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

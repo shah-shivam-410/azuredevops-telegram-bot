@@ -6,6 +6,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import ado.modal.Pipeline;
 import ado.modal.WorkItem;
 
 public class JsonResponseHandler {
@@ -42,6 +43,16 @@ public class JsonResponseHandler {
 			result.add(temp.getInt("id"));
 		}
 		return result;
+	}
+	
+	public Pipeline parseRunPipelineResponse(String s) {
+		Pipeline pipeline = new Pipeline();
+		JSONObject json = new JSONObject(s);
+		pipeline.setState(json.getString("state"));
+		pipeline.setId(json.getJSONObject("pipeline").getInt("id"));
+		pipeline.setName(json.getJSONObject("pipeline").getString("name"));
+		pipeline.setFolder(json.getJSONObject("pipeline").getString("folder"));
+		return pipeline;
 	}
 	
 }

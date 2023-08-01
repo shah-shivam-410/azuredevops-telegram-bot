@@ -12,5 +12,10 @@ public class JsonRequestHandler {
 		return obj.toString();
 	}
 	
+	public String createEmptyRequest() {
+		JSONObject obj = new JSONObject();
+		return obj.toString();
+	}
+	
 	
 }

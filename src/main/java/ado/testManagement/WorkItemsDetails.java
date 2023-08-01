@@ -31,11 +31,6 @@ public class WorkItemsDetails {
 		String resp = httpRequests.get(uri);
 		return new JsonResponseHandler().parseWorkItemDetails(resp);
 	}
-
-	public static void main(String[] args) throws Exception {
-		String st = new WorkItemsDetails().getWorkItemDetails("1").toString();
-		System.out.println(st);
-	}
 	
 	public String getActiveWorkItemsAsignedTo(String emailid) throws Exception {
 		String s = String.join("/", HttpRequests.BASE_URI, ORG_NAME, PROJECT_NAME, "_apis/wit/wiql");

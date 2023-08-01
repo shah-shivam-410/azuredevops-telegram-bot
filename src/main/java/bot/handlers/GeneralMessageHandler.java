@@ -24,6 +24,10 @@ public class GeneralMessageHandler implements EventHandler {
 		if(update.getMessage().getText().equals("Active work items asssigned to person")) {
 			message = responses.sendReplyMarkupMessage(update.getMessage().getChatId(), "Please enter email id", "Please enter email id");
 		}
+		if(update.getMessage().getText().equals("Run pipeline")) {
+			message = responses.sendReplyMarkupMessage(update.getMessage().getChatId(), "Please enter pipeline id", "Please enter pipeline id");
+		}
+		
 		return message;
 	}
 	
