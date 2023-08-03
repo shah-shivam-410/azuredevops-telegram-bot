@@ -1,0 +1,35 @@
+{
+    "count": 2,
+    "value": [
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6?revision=2"
+                },
+                "web": {
+                    "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_build/definition?definitionId=6"
+                }
+            },
+            "url": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/6?revision=2",
+            "id": 6,
+            "revision": 2,
+            "name": "SecondPipeline",
+            "folder": "\\"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/4?revision=1"
+                },
+                "web": {
+                    "href": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_build/definition?definitionId=4"
+                }
+            },
+            "url": "https://dev.azure.com/shahshivam410/9469bd1b-06ae-4ba1-8ee7-015ea100bf54/_apis/pipelines/4?revision=1",
+            "id": 4,
+            "revision": 1,
+            "name": "TestProject1",
+            "folder": "\\"
+        }
+    ]
+}

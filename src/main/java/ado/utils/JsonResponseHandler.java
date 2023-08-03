@@ -1,4 +1,4 @@
-package ado.testManagement;
+package ado.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +53,24 @@ public class JsonResponseHandler {
 		pipeline.setName(json.getJSONObject("pipeline").getString("name"));
 		pipeline.setFolder(json.getJSONObject("pipeline").getString("folder"));
 		return pipeline;
+	}
+
+	public List<Pipeline> parseListofPipelines(String s) {
+		List<Pipeline> list = new ArrayList<>();
+		JSONObject json = new JSONObject(s);
+		JSONArray arr = json.getJSONArray("value");
+		Pipeline temp;
+		JSONObject obj;
+		for(int i=0; i<arr.length(); i++) {
+			temp = new Pipeline();
+			obj = (JSONObject) arr.get(i);
+			temp.setId(obj.getInt("id"));
+			temp.setName(obj.getString("name"));
+			temp.setFolder(obj.getString("folder"));
+			list.add(temp);
+			temp = null;
+		}
+		return list;
 	}
 	
 }

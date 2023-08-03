@@ -10,6 +10,8 @@ import org.apache.http.client.utils.URIBuilder;
 import ado.modal.WorkItem;
 import ado.utils.ConfigReader;
 import ado.utils.HttpRequests;
+import ado.utils.JsonRequestHandler;
+import ado.utils.JsonResponseHandler;
 
 public class WorkItemsDetails {
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import ado.testManagement.PipelineDetails;
 import bot.utils.UtilityResponses;
 
 public class GeneralMessageHandler implements EventHandler {
@@ -26,6 +27,16 @@ public class GeneralMessageHandler implements EventHandler {
 		}
 		if(update.getMessage().getText().equals("Run pipeline")) {
 			message = responses.sendReplyMarkupMessage(update.getMessage().getChatId(), "Please enter pipeline id", "Please enter pipeline id");
+		}
+		if(update.getMessage().getText().equals("List all pipelines")) {
+			PipelineDetails details;
+			try {
+				details = new PipelineDetails();
+				String alljobslist = details.getListofJobs();
+				message = responses.sendText(update.getMessage().getFrom().getId(), alljobslist);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return message;

@@ -26,7 +26,7 @@ public class CommandHandlers implements EventHandler {
 			KeyboardButton keyButton1 = KeyboardButton.builder().text("Get workitem detais").build();
 			KeyboardButton keyButton2 = KeyboardButton.builder().text("Active work items asssigned to person").build();
 			KeyboardButton keyButton3 = KeyboardButton.builder().text("Run pipeline").build();
-			KeyboardButton keyButton4 = KeyboardButton.builder().text("Fourth choice").build();
+			KeyboardButton keyButton4 = KeyboardButton.builder().text("List all pipelines").build();
 			KeyboardRow row1 = new KeyboardRow();
 			row1.add(keyButton1);
 			KeyboardRow row2 = new KeyboardRow();
@@ -35,7 +35,7 @@ public class CommandHandlers implements EventHandler {
 			row3.add(keyButton3);
 			KeyboardRow row4 = new KeyboardRow();
 			row4.add(keyButton4);
-			ReplyKeyboardMarkup replyKeyBoard1 = ReplyKeyboardMarkup.builder().oneTimeKeyboard(true).selective(true)
+			ReplyKeyboardMarkup replyKeyBoard1 = ReplyKeyboardMarkup.builder().oneTimeKeyboard(false).selective(false)
 					.keyboard(List.of(row1, row2, row3, row4)).build();
 			message = responses.sendKeyBoard(update.getMessage().getChatId().toString(), "Please select option",
 					replyKeyBoard1);

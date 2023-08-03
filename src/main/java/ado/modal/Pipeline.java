@@ -34,8 +34,7 @@ public class Pipeline {
 	
 	@Override
 	public String toString() {
-		return "<b>Pipeline triggered successfully.</b>\n"
-				+ "<b>id : </b>" + id + "\n"
+		return  "<b>id : </b>" + id + "\n"
 				+ "<b>name : </b>" + name + "\n"
 				+ "<b>state : </b>" + state + "\n"
 				+ "<b>folder : </b>" + folder + "\n"
