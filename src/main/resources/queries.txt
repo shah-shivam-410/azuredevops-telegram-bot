@@ -1,0 +1,13 @@
+Select [System.Id] From WorkItems Where [System.AssignedTo] = 'shah.shivam.410@gmail.com' and [System.State] = 'Active' and [System.TeamProject] = 'TestProject1' order by [Microsoft.VSTS.Common.Priority] asc, [System.CreatedDate] desc"
+
+----------------------------------------------------------
+
+Select [System.Id] From WorkItems Where [System.AssignedTo] = 'shah.shivam.410@gmail.com' and [System.State] = 'Active' and [System.TeamProject] = 'TestProject1' order by [Microsoft.VSTS.Common.Priority] asc, [System.CreatedDate] desc
+
+----------------------------------------------------------
+
+Select [System.Id] From WorkItems Where [System.Title] contains 'issue' order by [Microsoft.VSTS.Common.Priority] asc, [System.CreatedDate] desc
+
+----------------------------------------------------------
+
+
