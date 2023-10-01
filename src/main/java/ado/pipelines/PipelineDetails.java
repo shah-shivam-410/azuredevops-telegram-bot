@@ -1,4 +1,4 @@
-package ado.testManagement;
+package ado.pipelines;
 
 import java.io.IOException;
 import java.net.URI;
@@ -8,25 +8,29 @@ import java.util.Properties;
 import org.apache.http.client.utils.URIBuilder;
 
 import ado.modal.Pipeline;
-import ado.utils.ConfigReader;
-import ado.utils.HttpRequests;
-import ado.utils.JsonRequestHandler;
-import ado.utils.JsonResponseHandler;
+import constants.Proplist;
+import utils.ConfigReader;
+import utils.HttpRequests;
+import utils.JsonRequestHandler;
+import utils.JsonResponseHandler;
 
 public class PipelineDetails {
 
-	public static String ORG_NAME;
-	public static String PROJECT_NAME;
+	final String baseURI;
+	final String orgName;
+	final String projectName;
+	
 	Properties props;
 
 	public PipelineDetails() throws IOException {
 		props = ConfigReader.loadProps();
-		ORG_NAME = props.getProperty("ORGNAME");
-		PROJECT_NAME = props.getProperty("PROJECTNAME");
+		baseURI = props.getProperty(Proplist.ADO_BASEURI);
+		orgName = props.getProperty(Proplist.ADO_ORGNAME);
+		projectName = props.getProperty(Proplist.ADO_PROJECT);
 	}
 
 	public String runPipeline(String pipelineId) throws Exception {
-		String s = String.join("/", HttpRequests.BASE_URI, ORG_NAME, PROJECT_NAME, "_apis/pipelines", pipelineId,
+		String s = String.join("/", baseURI, orgName, projectName, "_apis/pipelines", pipelineId,
 				"runs");
 		URI uri = new URIBuilder(s).addParameter("api-version", "7.1-preview.1").build();
 		HttpRequests httpRequests = new HttpRequests();
@@ -38,7 +42,7 @@ public class PipelineDetails {
 	}
 
 	public String getListofJobs() throws Exception {
-		String s = String.join("/", HttpRequests.BASE_URI, ORG_NAME, PROJECT_NAME, "_apis/pipelines");
+		String s = String.join("/", baseURI, orgName, projectName, "_apis/pipelines");
 		URI uri = new URIBuilder(s).addParameter("api-version", "7.1-preview.1").build();
 		HttpRequests httpRequests = new HttpRequests();
 		String resp = httpRequests.get(uri);

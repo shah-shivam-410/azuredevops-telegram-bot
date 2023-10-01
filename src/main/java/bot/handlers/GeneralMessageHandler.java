@@ -5,8 +5,8 @@ import java.io.IOException;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import ado.testManagement.PipelineDetails;
-import bot.utils.UtilityResponses;
+import ado.pipelines.PipelineDetails;
+import utils.UtilityResponses;
 
 public class GeneralMessageHandler implements EventHandler {
 	UtilityResponses responses;

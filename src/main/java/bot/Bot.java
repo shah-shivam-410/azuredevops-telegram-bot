@@ -14,20 +14,19 @@ import bot.handlers.CommandHandlers;
 import bot.handlers.EventHandler;
 import bot.handlers.GeneralMessageHandler;
 import bot.handlers.ReplyToMessageHandler;
+import constants.Proplist;
+import utils.ConfigReader;
 
 public class Bot extends TelegramLongPollingBot {
 	
 	private Logger log = LoggerFactory.getLogger(getClass());
 
-	private Properties props = new Properties();
+	private Properties props;
 
 	public EventHandler handler;
 
 	public Bot() throws IOException {
-		log.debug("Loading bot config properties");
-		FileInputStream fis = new FileInputStream(new File(".//src/main//resources//botconfig.properties"));
-		props.load(fis);
-		fis.close();
+		props = ConfigReader.loadProps();
 	}
 
 	@Override
@@ -61,12 +60,12 @@ public class Bot extends TelegramLongPollingBot {
 
 	@Override
 	public String getBotUsername() {
-		return props.getProperty("BOTNAME");
+		return props.getProperty(Proplist.BOT_USERNAME);
 	}
 
 	@Override
 	public String getBotToken() {
-		return props.getProperty("BOTTOKEN");
+		return props.getProperty(Proplist.BOT_TOKEN);
 	}
 
 }

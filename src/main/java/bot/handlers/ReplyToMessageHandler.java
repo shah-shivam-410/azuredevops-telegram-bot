@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import ado.defects.DefectOperations;
 import ado.modal.WorkItem;
-import ado.testManagement.PipelineDetails;
-import ado.testManagement.WorkItemsDetails;
-import bot.utils.UtilityResponses;
+import ado.pipelines.PipelineDetails;
+import utils.UtilityResponses;
 
 public class ReplyToMessageHandler implements EventHandler {
 	UtilityResponses responses;
@@ -24,9 +24,9 @@ public class ReplyToMessageHandler implements EventHandler {
 
 			String text = update.getMessage().getReplyToMessage().getText();
 			if (text.equals("Please enter workitem id")) {
-				WorkItemsDetails details;
+				DefectOperations details;
 				try {
-					details = new WorkItemsDetails();
+					details = new DefectOperations();
 					WorkItem workItemDetails = details.getWorkItemDetails(update.getMessage().getText());
 					message = responses.sendText(update.getMessage().getFrom().getId(), workItemDetails.toString());
 				} catch (Exception e) {
@@ -35,9 +35,9 @@ public class ReplyToMessageHandler implements EventHandler {
 			}
 
 			if (text.equals("Please enter email id")) {
-				WorkItemsDetails details;
+				DefectOperations details;
 				try {
-					details = new WorkItemsDetails();
+					details = new DefectOperations();
 					String itemsAsignedTo = details.getActiveWorkItemsAsignedTo(update.getMessage().getText());
 					message = responses.sendText(update.getMessage().getFrom().getId(), itemsAsignedTo);
 				} catch (Exception e) {

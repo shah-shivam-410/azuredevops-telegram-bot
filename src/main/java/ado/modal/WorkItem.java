@@ -8,6 +8,7 @@ public class WorkItem {
 	String type;
 	String createdBy;
 	Integer priority;
+	
 	public Integer getId() {
 		return id;
 	}
