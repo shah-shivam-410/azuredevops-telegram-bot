@@ -34,7 +34,6 @@ public class HttpRequests{
 		String resultContent = null;
 		HttpGet httpGet = new HttpGet(uri);
 		httpGet.setHeader(HttpHeaders.AUTHORIZATION, getAuthHeader());
-
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 			try (CloseableHttpResponse response = httpclient.execute(httpGet)) {
 				if (response.getStatusLine().getStatusCode() == 200) {
@@ -62,7 +61,6 @@ public class HttpRequests{
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
-		
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 			try (CloseableHttpResponse response = httpclient.execute(httpPost)) {
 				if (response.getStatusLine().getStatusCode() == 200) {

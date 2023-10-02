@@ -9,7 +9,7 @@ public class JsonRequestHandler {
 	
 	public String createActiveWorkItemAssignedToTeamRequest(String release, String teamname) {
 		JSONObject obj = new JSONObject();
-		String query = String.format("Select [System.Id] From WorkItems Where [System.WorkItemType] = \'Defect\' AND [State] = \'Assigned\' AND [Custom.Application_Name] = \'%s\' AND [System.Title] contains \'%s\' AND [System.IterationPath] = \'TestProject1\\CCSX_%s", teamname, release, release);
+		String query = String.format("Select [System.Id] From WorkItems Where [System.WorkItemType] = \'Defect\' AND [State] = \'Assigned\' AND [Custom.Application_Name] = \'%s\' AND [System.Title] contains \'%s\' AND [System.IterationPath] = \'TestProject1\\CCSX_%s\'", teamname, release, release);
 		obj.put("query", query);
 		return obj.toString();
 	}
@@ -28,6 +28,7 @@ public class JsonRequestHandler {
         fieldsArray.put("System.State");
         fieldsArray.put("System.AreaPath");
         fieldsArray.put("System.CreatedDate");
+        fieldsArray.put("System.CreatedBy");
         fieldsArray.put("System.WorkItemType");
         fieldsArray.put("Custom.Application_Name");
         fieldsArray.put("Custom.NoofTestsBlocked");
@@ -40,7 +41,14 @@ public class JsonRequestHandler {
 
 	public String createWorkitemsByStatusRequest(String release, String status) {
 		JSONObject obj = new JSONObject();
-		String query = String.format("Select [System.Id] From WorkItems Where [System.WorkItemType] = \'Defect\' AND [State] = \'%s\' AND [System.Title] contains \'%s\' AND [System.IterationPath] = \'TestProject1\\CCSX_%s", status, release, release);
+		String query = String.format("Select [System.Id] From WorkItems Where [System.WorkItemType] = \'Defect\' AND [State] = \'%s\' AND [System.Title] contains \'%s\' AND [System.IterationPath] = \'TestProject1\\CCSX_%s\'", status, release, release);
+		obj.put("query", query);
+		return obj.toString();
+	}
+	
+	public String createWorkitemsByCRRequest(String release, String crname) {
+		JSONObject obj = new JSONObject();
+		String query = String.format("Select [System.Id] From WorkItems Where [System.WorkItemType] = \'Defect\' AND [System.Title] contains \'%s\'  AND [System.Title] contains \'%s\' AND [System.IterationPath] = \'TestProject1\\CCSX_%s\'", crname, release, release);
 		obj.put("query", query);
 		return obj.toString();
 	}

@@ -3,12 +3,15 @@ package bot.handlers;
 import java.io.IOException;
 import java.util.List;
 
+import javax.swing.text.JTextComponent.KeyBinding;
+
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
+import bot.input.KeyBoards;
 import utils.UtilityResponses;
 
 public class CommandHandlers implements EventHandler {
@@ -23,22 +26,8 @@ public class CommandHandlers implements EventHandler {
 	public SendMessage handleEvent(Update update) {
 		SendMessage message = null;
 		if (update.getMessage().getText().equals("/start")) {
-			KeyboardButton keyButton1 = KeyboardButton.builder().text("Get workitem detais").build();
-			KeyboardButton keyButton2 = KeyboardButton.builder().text("Active work items asssigned to person").build();
-			KeyboardButton keyButton3 = KeyboardButton.builder().text("Run pipeline").build();
-			KeyboardButton keyButton4 = KeyboardButton.builder().text("List all pipelines").build();
-			KeyboardRow row1 = new KeyboardRow();
-			row1.add(keyButton1);
-			KeyboardRow row2 = new KeyboardRow();
-			row2.add(keyButton2);
-			KeyboardRow row3 = new KeyboardRow();
-			row3.add(keyButton3);
-			KeyboardRow row4 = new KeyboardRow();
-			row4.add(keyButton4);
-			ReplyKeyboardMarkup replyKeyBoard1 = ReplyKeyboardMarkup.builder().oneTimeKeyboard(false).selective(false)
-					.keyboard(List.of(row1, row2, row3, row4)).build();
-			message = responses.sendKeyBoard(update.getMessage().getChatId().toString(), "Please select option",
-					replyKeyBoard1);
+			message = responses.sendKeyBoard(update.getMessage().getChatId().toString(), "Welcome! Select release name.",
+					KeyBoards.releaseNameKeyboard());
 		}
 		return message;
 	}

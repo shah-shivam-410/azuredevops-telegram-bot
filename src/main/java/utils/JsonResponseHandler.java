@@ -78,7 +78,9 @@ public class JsonResponseHandler {
 
 		WorkItem item = null;
 		JSONObject fields = null;
-
+		if(arr.length() == 0)
+			return "No woritem found";
+		
 		for(int i=0; i<arr.length(); i++) {
 			fields = arr.getJSONObject(i).getJSONObject("fields");
 			item = new WorkItem();
@@ -106,6 +108,8 @@ public class JsonResponseHandler {
 		JSONObject json = new JSONObject(resp);
 		JSONArray arr = json.getJSONArray("workItems");
 		List<Integer> list = new ArrayList<>();
+		if(arr.length() == 0)
+			return list;
 		for(int i=0; i<arr.length(); i++) {
 			list.add(arr.getJSONObject(i).getInt("id"));
 		}

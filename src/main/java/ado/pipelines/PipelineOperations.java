@@ -14,7 +14,7 @@ import utils.HttpRequests;
 import utils.JsonRequestHandler;
 import utils.JsonResponseHandler;
 
-public class PipelineDetails {
+public class PipelineOperations {
 
 	final String baseURI;
 	final String orgName;
@@ -22,7 +22,7 @@ public class PipelineDetails {
 	
 	Properties props;
 
-	public PipelineDetails() throws IOException {
+	public PipelineOperations() throws IOException {
 		props = ConfigReader.loadProps();
 		baseURI = props.getProperty(Proplist.ADO_BASEURI);
 		orgName = props.getProperty(Proplist.ADO_ORGNAME);

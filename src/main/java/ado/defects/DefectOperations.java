@@ -39,8 +39,10 @@ public class DefectOperations {
 	}
 	
 	public String getWorkItemListDetails(List<Integer> list) throws URISyntaxException {
+		if(list.isEmpty())
+			return "No workitem found";
 		String s = String.join("/", baseURI, orgName, projectName, "_apis/wit/workitemsbatch");
-		URI uri = new URIBuilder(s).addParameter("api-version", "7.1-preview.3").build();
+		URI uri = new URIBuilder(s).addParameter("api-version", "7.0").build();
 		String request = new JsonRequestHandler().createWorkItemListDetailsRequest(list);
 		HttpRequests httpRequests = new HttpRequests();
 		String resp = httpRequests.post(uri, request);
@@ -60,6 +62,15 @@ public class DefectOperations {
 		String s = String.join("/", baseURI, orgName, projectName, "_apis/wit/wiql");
 		URI uri = new URIBuilder(s).addParameter("api-version", "7.1-preview.2").build();
 		String request = new JsonRequestHandler().createWorkitemsByStatusRequest(release, status);
+		HttpRequests httpRequests = new HttpRequests();
+		String resp = httpRequests.post(uri, request);
+		return new JsonResponseHandler().parseListOfDefectWiql(resp);
+	}
+	
+	public List<Integer> getListOfDefectsByCR(String release, String crname) throws Exception {
+		String s = String.join("/", baseURI, orgName, projectName, "_apis/wit/wiql");
+		URI uri = new URIBuilder(s).addParameter("api-version", "7.1-preview.2").build();
+		String request = new JsonRequestHandler().createWorkitemsByCRRequest(release, crname);
 		HttpRequests httpRequests = new HttpRequests();
 		String resp = httpRequests.post(uri, request);
 		return new JsonResponseHandler().parseListOfDefectWiql(resp);
