@@ -1,4 +1,4 @@
-package bot.utils;
+package utils;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -17,10 +17,9 @@ public class UtilityResponses {
 		props = ConfigReader.loadProps();
 	}
 
-	public SendMessage sendText(Long who, String what) {
-		SendMessage sm = SendMessage.builder().chatId(who.toString())
+	public SendMessage sendText(String chatid, String what) {
+		return SendMessage.builder().chatId(chatid)
 				.parseMode("HTML").text(what).build();
-		return sm;
 	}
 
 	public SendDice sendDice(Long who) {
@@ -38,16 +37,15 @@ public class UtilityResponses {
 		return sm;
 	}
 
-	public SendMessage sendReplyMarkupMessage(Long who, String msgText, String replyText) {
+	public SendMessage sendReplyMarkupMessage(String chatid, String msgText, String replyText) {
 		ForceReplyKeyboard forceReplyKeyboard = ForceReplyKeyboard.builder()
 				.inputFieldPlaceholder(replyText)
 				.forceReply(true)
 				.build();
-		SendMessage sm = SendMessage.builder()
-				.chatId(who)
+		return SendMessage.builder()
+				.chatId(chatid)
 				.text(msgText).replyMarkup(forceReplyKeyboard)
 				.build();
-		return sm;
 	}
 	
 }
