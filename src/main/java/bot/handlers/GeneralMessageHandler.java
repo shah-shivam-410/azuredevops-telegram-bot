@@ -61,7 +61,7 @@ public class GeneralMessageHandler implements EventHandler {
 		}
 		
 		if(update.getMessage().getText().toLowerCase().contains("by cr")) {
-			return responses.sendReplyMarkupMessage(update.getMessage().getChatId().toString(), "Enter CR name.", "Enter CR name");
+			return responses.sendReplyMarkupMessage(update.getMessage().getChatId().toString(), "Enter CR name", "Enter CR name");
 		}
 		
 		if(update.getMessage().getText().contains("Execute")) {
