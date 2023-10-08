@@ -1,6 +1,7 @@
 package bot.handlers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -8,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import ado.defects.DefectOperations;
 import ado.modal.WorkItem;
 import ado.pipelines.PipelineOperations;
+import constants.DataList;
 import utils.UtilityResponses;
 
 public class ReplyToMessageHandler implements EventHandler {
@@ -36,6 +38,17 @@ public class ReplyToMessageHandler implements EventHandler {
 					e.printStackTrace();
 				}
 			}
+			
+			if (text.equals("Enter CR name")) {
+				try {
+					List<Integer> list = defectOperations.getListOfDefectsByCR(DataList.release, update.getMessage().getText());
+					String resp = defectOperations.getWorkItemListDetails(list);
+					message = responses.sendText(update.getMessage().getFrom().getId().toString(),
+							resp);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 
 			if (text.equals("Please enter pipeline id")) {
 				try {
@@ -51,5 +64,7 @@ public class ReplyToMessageHandler implements EventHandler {
 		return message;
 
 	}
+	
+	
 
 }

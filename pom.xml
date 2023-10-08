@@ -20,21 +20,20 @@
 		<dependency>
 			<groupId>org.telegram</groupId>
 			<artifactId>telegrambots</artifactId>
-			<version>6.1.0</version>
+			<version>6.8.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.19.0</version>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots-chat-session-bot</artifactId>
+			<version>6.8.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.19.0</version>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20230618</version>
 		</dependency>
-
 
 	</dependencies>
 
