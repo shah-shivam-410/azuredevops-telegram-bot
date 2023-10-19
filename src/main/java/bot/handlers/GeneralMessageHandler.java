@@ -53,7 +53,7 @@ public class GeneralMessageHandler implements EventHandler {
 		}
 		
 		if(update.getMessage().getText().toLowerCase().contains("by assigned team")) {
-			return responses.sendKeyBoard(update.getMessage().getChatId().toString(), "Select the status.", KeyBoards.teamNameKeyBoard());
+			return responses.sendKeyBoard(update.getMessage().getChatId().toString(), "Select the team name.", KeyBoards.teamNameKeyBoard());
 		}
 		
 		if(update.getMessage().getText().toLowerCase().contains("by id")) {
