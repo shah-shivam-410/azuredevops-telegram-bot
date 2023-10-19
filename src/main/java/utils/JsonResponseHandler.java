@@ -81,6 +81,10 @@ public class JsonResponseHandler {
 		if(arr.length() == 0)
 			return "No woritem found";
 		
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("<b>Total workitems: %d</b>%n%n", arr.length()));
+
+
 		for(int i=0; i<arr.length(); i++) {
 			fields = arr.getJSONObject(i).getJSONObject("fields");
 			item = new WorkItem();
@@ -97,7 +101,7 @@ public class JsonResponseHandler {
 			list.add(item);
 		};
 		
-		StringBuilder sb = new StringBuilder();
+		
 		list.forEach(i -> {
 			sb.append(i.toString()).append("\n\n");
 		});
