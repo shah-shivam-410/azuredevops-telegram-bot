@@ -21,19 +21,30 @@
 			<groupId>org.telegram</groupId>
 			<artifactId>telegrambots</artifactId>
 			<version>6.8.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>org.telegram</groupId>
-			<artifactId>telegrambots-chat-session-bot</artifactId>
-			<version>6.8.0</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.telegram</groupId> <artifactId>telegrambots-chat-session-bot</artifactId> 
+			<version>6.8.0</version> </dependency> -->
 
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20230618</version>
+			<version>20231013</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.4.11</version>
+		</dependency>
+
 
 	</dependencies>
 

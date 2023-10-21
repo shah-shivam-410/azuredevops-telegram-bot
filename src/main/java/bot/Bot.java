@@ -2,14 +2,14 @@ package bot;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Properties;
 
-import org.apache.shiro.session.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.session.TelegramLongPollingSessionBot;
 
 import bot.auth.TempAuthSolution;
 import bot.auth.User;
@@ -22,7 +22,9 @@ import exceptions.UnAuthorizedAccessException;
 import utils.ConfigReader;
 import utils.UtilityResponses;
 
-public class Bot extends TelegramLongPollingSessionBot {
+public class Bot extends TelegramLongPollingBot {
+
+	private static final Logger log = LoggerFactory.getLogger(Bot.class);
 
 	private Properties props;
 	private Map<Long, User> usermap;
@@ -36,7 +38,7 @@ public class Bot extends TelegramLongPollingSessionBot {
 	}
 
 	@Override
-	public void onUpdateReceived(Update update, Optional<Session> botSession) {
+	public void onUpdateReceived(Update update) {
 
 		try {
 			validateUser(update);
@@ -80,13 +82,31 @@ public class Bot extends TelegramLongPollingSessionBot {
 
 	public void validateUser(Update update) throws UnAuthorizedAccessException {
 		if (update.hasCallbackQuery()) {
-			if (!usermap.containsKey(update.getCallbackQuery().getFrom().getId()))
-				throw new UnAuthorizedAccessException(update.getCallbackQuery().getFrom().getId(),
-						update.getMessage().getFrom().getFirstName(), update.getMessage().getFrom().getLastName());
+			if (!usermap.containsKey(update.getCallbackQuery().getFrom().getId())) {
+				log.warn("Unauthorized access from: [id: {}, firstname: {}, lastname: {}]",
+						update.getCallbackQuery().getFrom().getId(), 
+						update.getCallbackQuery().getFrom().getFirstName(),
+						update.getCallbackQuery().getFrom().getLastName()
+						);
+				throw new UnAuthorizedAccessException(
+						update.getCallbackQuery().getFrom().getId(),
+						update.getMessage().getFrom().getFirstName(), 
+						update.getMessage().getFrom().getLastName()
+						);
+			}
 		} else {
-			if (!usermap.containsKey(update.getMessage().getFrom().getId()))
-				throw new UnAuthorizedAccessException(update.getMessage().getFrom().getId(),
-						update.getMessage().getFrom().getFirstName(), update.getMessage().getFrom().getLastName());
+			if (!usermap.containsKey(update.getMessage().getFrom().getId())) {
+				log.warn("Unauthorized access from: [id: {}, firstname: {}, lastname: {}]",
+						update.getMessage().getFrom().getId(), 
+						update.getMessage().getFrom().getFirstName(),
+						update.getMessage().getFrom().getLastName()
+						);
+				throw new UnAuthorizedAccessException(
+						update.getMessage().getFrom().getId(),
+						update.getMessage().getFrom().getFirstName(), 
+						update.getMessage().getFrom().getLastName()
+						);
+			}
 		}
 
 	}
